@@ -17,7 +17,7 @@
   <meta name="description" content="Mr.Bai Blog 记录生活 记录笔记">
   <meta name="author" content="Mr.Bai">
   <meta name="keywords" content="">
-  <title>Hello World - Mr.BaiBlog-喜欢折腾</title>
+  <title>linux 常用命令 - Mr.BaiBlog-喜欢折腾</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -162,7 +162,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Hello World">
+            <span class="h2" id="subtitle" title="linux 常用命令">
               
             </span>
 
@@ -172,8 +172,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-01-10 20:54" pubdate>
-        January 10, 2021 pm
+      <time datetime="2021-01-11 12:56" pubdate>
+        January 11, 2021 pm
       </time>
     </span>
   
@@ -184,7 +184,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      75 字
+      1.6k 字
     </span>
   
 
@@ -194,7 +194,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1
+      19
        分钟
     </span>
   
@@ -224,24 +224,144 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Hello World</h1>
+            <h1 style="display: none">linux 常用命令</h1>
             
             <div class="markdown-body">
-              <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+              <p>Linux文件名严格区分大小写</p>
+<p> 一、文件基本操作命令</p>
+<h1 id="1-ls命令"><a href="#1-ls命令" class="headerlink" title="1. ls命令"></a>1. ls命令</h1><p>ls命令的功能是显示指定目录下的文件目录清单相当于dos下的dir命令，而且其参数更加丰富多样。</p>
+<p>（1）ls示例一——不带参数</p>
+<p>[root@yxy ~]# ls</p>
+<p>anaconda-ks.cfg  install.log  install.log.syslog</p>
+<p>功能：显示指定目录中的文件清单，如果没有指定任何目录，则默认为当前目录。</p>
+<p>2）ls示例二——显示隐含文件</p>
+<p>[root@yxy ~]# ls -a</p>
+<p>.   anaconda-ks.cfg  .bash_logout   .bashrc  install.log         .tcshrc</p>
+<p>..  .bash_history    .bash_profile  .cshrc   install.log.syslog</p>
+<p>参数-a的功能：显示隐含文件。</p>
+<p>说明：若文件名以“.”开头，则认为是隐含的，进而普通的ls命令不显示以“.”开头的文件；所以要完全显示某目录下的文件清单，必须加上-a参数才行。</p>
+<p>（3）ls示例三——长格式输出</p>
+<p>[root@yxy ~]# ls -l</p>
+<p>总用量 24</p>
+<p>-rw——-. 1 root root  1116 11月 13 18:15 anaconda-ks.cfg</p>
+<p>-rw-r–r–. 1 root root 12526 11月 13 18:15 install.log</p>
+<p>-rw-r–r–. 1 root root  3482 11月 13 18:14 install.log.syslog</p>
+<p>参数-l 的功能是：以长格式列表输出指定目录中的文件清单</p>
+<p>以上述输出中文件install.log为例</p>
+<p> 解释长格式输出的内容如下：</p>
+<p>文件权限  连接数  属主    属组    大小   日期     时间      文件名</p>
+<p>-rw-r–r–.    1   root   root   12526  11月13 18:15 install.log</p>
+<p>Linux文件有三种典型的权限，即r读权限、w写权限和x执行权限。在长格式输出中在文件类型的后面有9列权限位，实际上这是针对不同用户而设定的，如下所示。</p>
+<p>属主的权限  属组的权限  其他用户的权限</p>
+<pre><code> rwx                 rwx                  r-x</code></pre>
+<p>（4）ls示例四——递归显示</p>
+<p>[root@yxy ~]# ls -R</p>
+<p>.:</p>
+<p>anaconda-ks.cfg  install.log  install.log.syslog</p>
+<p>参数-R 的功能是：递归显示指定目录下的文件清单，</p>
+<p>即会显示指定目录分支内各子目录中的文件清单。</p>
+<h1 id="2-pwd命令"><a href="#2-pwd命令" class="headerlink" title="2.  pwd命令"></a>2.  pwd命令</h1><p>示例：pwd</p>
+<p>[root@yxy ~]# pwd</p>
+<p>/root</p>
+<p>功能：显示当前目录。</p>
+<h1 id="3-mkdir命令"><a href="#3-mkdir命令" class="headerlink" title="3.  mkdir命令"></a>3.  mkdir命令</h1><p>（1）mkdir示例一</p>
+<p>[root@yxy ~]# mkdir abc</p>
+<p>功能：在当前目录下创建目录abc</p>
+<p>（2）mkdir示例二——创建多级目录</p>
+<p>[root@yxy ~]# mkdir -p a/b/c</p>
+<p>[root@yxy ~]# ls -R a</p>
+<p>a:</p>
+<p>b</p>
+<p>a/b:</p>
+<p>c</p>
+<p>a/b/c:功能：参数-p功能是如果要创建的目录的父目录不存在，则先创建其父目录，再创建该目录； 如果指定的目录存在，则不影响原目录，也不会报错。在本示例中会连续创建a目录、a/b目录、a/b/c目录。</p>
+<h1 id="4-cd命令"><a href="#4-cd命令" class="headerlink" title="4. cd命令"></a>4. cd命令</h1><p>（1）cd示例一——切换工作目录</p>
+<p>[root@yxy ~]# cd /var</p>
+<p>[root@yxy var]# pwd</p>
+<p>/var</p>
+<p>功能：将当前的工作目录切换为/var</p>
+<p>（2）cd示例二——切换到当前用户的主目录</p>
+<p>[root@yxy var]# cd</p>
+<p>[root@yxy ~]# pwd</p>
+<p>/root</p>
+<p>功能：不带参数的cd命令直接将当前的工作目录切换为该用户的主目录。主目录又称为家目录，在RHEL中是在创建用户时，自动在/home下为用户创建一个用其用户名同名的目录，并将该目录的所有权划归给该用户所有。</p>
+<p>注意：字符“~”代表（当前）用户的主目录。                   </p>
+<h1 id="5-touch命令"><a href="#5-touch命令" class="headerlink" title="5. touch命令"></a>5. touch命令</h1><p>（1）touch示例一——创建空文件</p>
+<p>[root@yxy ~]# touch myfile</p>
+<p>[root@yxy ~]# ls -l myfile</p>
+<p>-rw-r–r–. 1 root root 0 11月 13 23:48 myfile</p>
+<p>功能：如果myfile不存在，则创建一个大小为0字节名为myfile的空文件。</p>
+<p>（2）touch示例二——改变文件的最后修改时间</p>
+<p>再执行一次touch myfile</p>
+<p>[root@yxy ~]# touch myfile</p>
+<p>[root@yxy ~]# ls -l myfile</p>
+<p>-rw-r–r–. 1 root root 0 11月 13 23:49 myfile</p>
+<p>功能：如果myfile已存在，则将改变myfile的最后修改时间。</p>
+<h1 id="6-cp命令"><a href="#6-cp命令" class="headerlink" title="6. cp命令"></a>6. cp命令</h1><p>（1）cp示例一——复制文件</p>
+<p>[root@yxy ~]# cp /etc/*   abc</p>
+<p>功能：将/etc/目录下的文件复制到目录abc中。“*”是通配符，可以匹配多个字符；“？”只能匹配一个字符。</p>
+<p>（2）cp示例二——复制目录</p>
+<p>[root@yxy ~]# cp  -R   /etc  abc</p>
+<p>功能：增加了参数-Ｒ，就能将目录/etc下面的所有子目录和文件都复制到目录abc中。</p>
+<h1 id="7-mv命令"><a href="#7-mv命令" class="headerlink" title="7. mv命令"></a>7. mv命令</h1><p>（1）mv示例一——将文件移动到目录中</p>
+<p>[root@yxy ~]# mv  myfile  mydir1</p>
+<p>功能：如果mydir1存在且是个目录，则将文件myfile移动到目录mydir1中。</p>
+<p>（2）mv示例二——文件改名</p>
+<p>[root@yxy ~]# mv myfile myfile2</p>
+<p>功能：将文件（或目录）myfile改名为myfile2。</p>
+<h1 id="8-rmdir命令"><a href="#8-rmdir命令" class="headerlink" title="8.  rmdir命令"></a>8.  rmdir命令</h1><p>[root@yxy ~]# rmdir   mydir1</p>
+<p>功能：删除指定的空目录。</p>
+<h1 id="9-rm命令"><a href="#9-rm命令" class="headerlink" title="9.  rm命令"></a>9.  rm命令</h1><p>（1）rm示例一——删除文件</p>
+<p>[root@yxy ~]# rm  php.ini</p>
+<p>功能：删除指定的文件 php.ini。</p>
+<p>（2）rm示例二——删除目录</p>
+<p>[root@yxy ~]# rm  -rf  abc</p>
+<p>功能：参数-r是递归的意思，即可以删除非空目录；参数-f是强制的意思。</p>
+<h1 id="10-cat命令"><a href="#10-cat命令" class="headerlink" title="10.  cat命令"></a>10.  cat命令</h1><p>（1）cat示例一——显示文件内容</p>
+<p>[root@yxy ~]# cat myfile</p>
+<p>hello,world</p>
+<p>功能：显示指定文件myfile的内容。</p>
+<p>（2）cat示例二——创建文件</p>
+<p>[root@yxy ~]# cat  &gt;  myfile2</p>
+<p>Welcome to Linux World!</p>
+<p>按ctrl+d结束输入</p>
+<p>功能：利用输出重定向符“&gt;”来创建简短的文本文件myfile2。</p>
+<h1 id="11-more和-less命令"><a href="#11-more和-less命令" class="headerlink" title="11.  more和 less命令"></a>11.  more和 less命令</h1><p> more  /etc/httpd/conf/httpd.conf</p>
+<p>功能：分屏显示指定文件httpd.conf的内容，非常适合显示超过一屏的文本文件。每按一下空格键，向后翻一屏；每按一次回车键，向后翻一行。</p>
+<p>说明：less与more功能很相似，只不过less功能更强大，支持PageUp键向前翻屏，及PageDown向后翻屏。</p>
+<h1 id="12-head命令"><a href="#12-head命令" class="headerlink" title="12.  head命令"></a>12.  head命令</h1><p>（1）head示例一——显示文件头10行内容</p>
+<p>head  /etc/httpd/conf/httpd.conf</p>
+<p>功能：默认显示指定文件的头10行的内容。</p>
+<p>（2）head示例二——显示文件头n行内容</p>
+<p> head -n 19 /etc/httpd/conf/httpd.conf</p>
+<p>功能：参数-n设置显示指定行数，本例会显示文件的头19行的内容。</p>
+<h1 id="13-tail命令"><a href="#13-tail命令" class="headerlink" title="13.  tail命令"></a>13.  tail命令</h1><p>（1）tail示例一——显示文件最后10行内容</p>
+<p>tail  /etc/httpd/conf/httpd.conf</p>
+<p>功能：默认显示指定文件的末尾10行的内容。</p>
+<p> （2）tail示例二——显示文件最后n行内容</p>
+<p>tail  -n 12  /etc/httpd/conf/httpd.conf</p>
+<p>功能：参数-n设置显示指定行数；</p>
+<pre><code>      本例会显示文件的末尾12行的内容。</code></pre>
 
             </div>
             <hr>
             <div>
               <div class="post-metas mb-3">
                 
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/LInux/">LInux</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Linux/">Linux</a>
+                    
+                  </div>
                 
               </div>
               
